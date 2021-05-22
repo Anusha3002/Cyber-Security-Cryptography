@@ -19,7 +19,7 @@ Plaintext (which is the input message given by the user), is converted to Cipher
 Team Runtime Terror
 
 1. Anusha https://github.com/Anusha3002
-2. Siddharth Vatsal
-3. Himanshi
+2. Siddharth Vatsal https://github.com/siddharth4001
+3. Himanshi https://github.com/Himanshi2511
 
 PDF link and working video link: https://drive.google.com/drive/folders/1vZLr-2Gjyt4EVh_vEdHx-QMwksCeQIFy?usp=sharing
