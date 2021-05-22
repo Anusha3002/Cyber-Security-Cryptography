@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<header th:fragment="header" class="main-header">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" th:href="@{/}" th:utext="#{label.pages.home.title}">home</a>
+        <a class="navbar-brand" th:href="@{/login}" th:utext="#{label.topnav.login}" >Login</a>
+        <a class="navbar-brand" th:href="@{/registration.html}" th:utext="#{label.topnav.register}">Register</a>
+      <a class="navbar-brand" th:href="@{/about-us}" th:utext="#{label.topnav.aboutus}" >About Us</a>
+      <a class="navbar-brand" th:href="@{/contact-us}" th:utext="#{label.topnav.contactus}">Contact Us</a>
+      <a class="navbar-brand" th:href="@{/chat-bot}" th:utext="#{label.topnav.chatbox}">Chat-Bot</a>
+
+     </div>
+      <div class="nav navbar-nav navbar-right">
+          <li><a href="?lang=en" th:utext="#{label.form.loginEnglish}">login</a></li>
+          <li><a href="?lang=es_ES" th:utext="#{label.form.loginSpanish}">login</a></li>
+      </div>
+    </div>
+</nav>
+</header>

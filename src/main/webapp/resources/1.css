@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: #010615;
+}
+.header {
+    align-self: center;
+    align-content: center;
+    justify-content: left;
+    overflow: hidden;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 15px;
+    width: 99%;
+    background: rgba(255, 255, 255, .5);
+    margin-top: -40px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    overflow: hidden;
+    height: 85px;
+    margin-left: 10px;
+  }
+.header img {
+    float: left;
+    bottom: 2px;
+    box-shadow: none;
+}
+.header ul {
+    list-style: none;
+    float: left;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+.header ul li {
+    float: left;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.header a {
+    color: #010303;
+    text-decoration: inherit;
+    transition: 500ms;
+  }
+.header a:hover {
+    color: #0f7be0;
+  }
+.box{
+    font-family: 'Popins', sans-serif;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    transition: 0.5s;
+    background: #060c21;
+}
+.box:hover{
+    height: 400px;
+}
+.box .imgBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.box .imgBx img{
+    max-width: 100%;
+    opacity: 0.4;
+    transition: 0.5s;
+    margin-top: 90px;
+}
+.box:hover .imgBx img{
+    opacity: 1;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: #fff;
+    z-index: -1;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: #fff;
+    z-index: -1;
+    filter: blur(40px);
+}
+.box::before, .box::after{
+    background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+}
+.box:nth-child(2)::before, .box:nth-child(2)::after{
+    background: linear-gradient(235deg,#ff005e,#010615,#fbff00);;
+}
+.box:nth-child(3)::before, .box:nth-child(3)::after{
+    background: linear-gradient(235deg,#772aff,#010615,#2196F3);
+}
+.box .content{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    height: 90px;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+.box:hover .content{
+    opacity: 1;
+}
+.box .content h2{
+    vertical-align: bottom;
+    align-items: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.box .content h2 span{
+    font-size: 15px;
+    color: #fff;
+    font-weight: 350;
+    letter-spacing: 1px;
+}
+.container {
+    width: 56px;
+    perspective: 1000px;
+    margin-top: 250px;
+}
+.cube {
+    margin: auto;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transform-style: preserve-3d;
+    transition: transform 3s ease;
+}
+.cube:hover {
+    transform: rotateX(180deg) rotateY(720deg);
+}
+.side {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid #000000;
+}
+.side.back {
+    transform: translateZ(-25px) rotateX(180deg);
+}
+.side.left {
+    transform: translateX(-25px) rotateY(-90deg);
+}
+.side.right {
+    transform: translateX(25px) rotateY(90deg);
+}
+.side.front {
+    transform: translateZ(25px);
+}
+.side.top {
+    transform: translateY(25px) rotateX(90deg);
+}
+.side.bottom {
+    transform: translateY(-25px) rotateX(90);
+}
+.side img {
+    vertical-align: middle;
+    margin-top: 10px;
+}
+.side.gray {
+    color: #777;
+    background-color: #ffffff;
+}
+.side.black {
+    color: white;
+    background-color: #f6fafc;
+}
+.side.twitter{
+    color: white;
+    background-color: #f6fafc;
+}
+.side.facebook {
+    color: white;
+    background-color: #f6f8fa;
+}

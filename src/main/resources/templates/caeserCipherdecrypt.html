@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+<style>
+.password-verdict{
+color:#000;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script th:src="@{/resources/pwstrength.js}"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII"/>
+<title th:utext="#{label.form.title}">form</title>
+</head>
+<body>
+<header th:replace="core/signedheader :: header"></header>
+    <div class="container">
+        <div >
+            <h1> YOUR DECRYPTED TEXT </h1>
+            <br/>
+            <form action="/" method="POST" enctype="utf8" >
+                <div class="form-group row" >
+                    <label for="title" class="col-sm-3" >Title</label>
+                    <span class="col-sm-5"><label for="title" class="col-sm-3" th:utext="${caeserCipher.title}" >Title</label></span>
+                    <span id="titleError" class="alert alert-danger col-sm-4" style="display:none"></span>
+                    
+                </div>
+                <div class="form-group row">
+                    <label for="text" class="col-sm-3" >Text</label>
+                    <span class="col-sm-5"><label for="text" class="col-sm-3" th:utext="${caeserCipher.text}">Text</label></span>
+                    <span id="textError" class="alert alert-danger col-sm-4" style="display:none"></span>
+                    
+                </div>
+                <!--div class="form-group row">
+                    <label for="shift" class="col-sm-3">Shift By</label>
+                    <span class="col-sm-5">
+                    <span id="emailError" class="alert alert-danger col-sm-4" style="display:none"></span>
+                    
+                </div-->
+                <br/>
+            </form>
+            <br/> 
+        </div>
+    </div>
+
+<script th:inline="javascript">
+var serverContext = [[@{/}]];
+
+$(document).ready(function () {
+	$('form').submit(function(event) {
+		shift(event);
+	});
+	
+});
+
+function shift(event){
+	event.preventDefault();
+    $(".alert").html("").hide();
+    $(".error-list").html("");
+
+    var formData= $('form').serialize();
+    $.post(serverContext + "caesar-cipher/add",formData ,function(data){
+        if(data.message == "success"){
+            window.location.href = serverContext + "caesar-cipher";
+        }
+        
+    })
+    .fail(function(data) {
+		alert (data);
+    });
+}
+
+</script>
+</body>
+
+</html>

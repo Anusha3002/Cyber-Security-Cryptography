@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Help Zone</title>
+    <link rel="icon" href="bot.png" />
+    <link rel="stylesheet" href="/resources/bot.css" />
+</head>
+
+<body>
+<div class="intro">
+    <div class="intro1">
+        <h1>CIPHERING NINJA</h1>
+        <h4>Hey user! Pleasure to see you here.</h4>
+        <h5>Just tell how can I help you?</h5>
+    </div>
+</div>
+<div id="container" class="container">
+    <div class="menu">
+        <div class="menu1">
+            <ul>
+                <li>
+                    <a th:href="@{/}" >
+                        <span class="icon"></span>
+                        <span class="title">HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/about-us}" >
+                        <span class="icon"></span>
+                        <span class="title">ABOUT US</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/registration.html}" >
+                        <span class="icon"></span>
+                        <span class="title">REGISTER</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/login}" >
+                        <span class="icon"></span>
+                        <span class="title">LOGIN</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/contact-us}" >
+                        <span class="icon"></span>
+                        <span class="title">CONTACT US</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="toggle"></div>
+    </div>
+
+    <div id="chat" class="chat">
+        <div id="messages" class="messages"></div>
+        <input id="input" type="text" placeholder="Ask Whatever You Want..." autocomplete="off" autofocus="true" />
+
+    </div>
+    <!-- revolving animation -->
+    <div class="c1">
+        <div class="c2">
+            <span style="--i:1;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:2;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:3;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:4;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:5;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:6;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:7;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:8;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:9;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:10;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:11;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:12;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:13;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:14;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:15;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+            <span style="--i:16;"><i>Hi</i> I am <i>Ninja</i> bot<img src="/resources/robot (1).png"></span>
+        </div>
+    </div>
+</div>
+<script>
+        const menu1 = document.querySelector('.menu1');
+        document.querySelector('.toggle').onclick = function(){
+            this.classList.toggle('active');
+            menu1.classList.toggle('active');
+        }
+    </script>
+</body>
+
+<script type="text/javascript" src="/resources/js1.js"> </script>
+<script type="text/javascript" src="/resources/js2.js"> </script>
+<script type="text/javascript" src="/resources/js3.js"> </script>
+
+</html>
