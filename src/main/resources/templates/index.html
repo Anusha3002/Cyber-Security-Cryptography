@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+
+      <link href="https://use.fontawesome.com/d1341f9b7a.css" media="all" rel="stylesheet">
+      <link rel="stylesheet" href="/resources/cipherninja.css">
+      <link rel="stylesheet" href="/resources/video.css">
+</head>
+
+     
+
+    <div class="fullscreen-bg">
+        <video loop muted autoplay poster="Screenshot 2021-05-16 at 6.25.45 PM.png" class="fullscreen-bg__video">
+            <source src="/resources/video6.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="fullscreen nopadding">
+        <div id="header">
+          <img src="/resources/pngtree-ninja-silhouette-logo-design-png-image_1008462.jpeg" width="50px" />
+          <ul>
+            <li> <a href="#home" th:utext="#{label.pages.home.title}"> Home </a> </li>
+            <li><a th:href="@{/registration.html}" th:utext="#{label.topnav.register}" > Register</a></li>
+            <li><a th:href="@{/login}" th:utext="#{label.topnav.login}"class="a">Login</a></li>
+              <li><a th:href="@{/about-us}" th:utext="#{label.topnav.aboutus}" >About Us</a></li>
+            <li><a th:href="@{/contact-us}" th:utext="#{label.topnav.contactus}" class="a">Contact Us</a></li>
+            <li><a th:href="@{/chat-bot}" th:utext="#{label.topnav.chatbox}" class="a"> Chat Bot </a></li>
+            </ul>
+            <ul style="float:right">
+                <li><a href="?lang=en" th:utext="#{label.form.loginEnglish}">login</a></li>
+                <li><a href="?lang=es_ES" th:utext="#{label.form.loginSpanish}">login</a></li>
+            </ul>
+        </div>
+
+        <div class="header">
+          <h1>CIPHERING NINJA</h1>
+        </div>
+      </div>
+      
+      <div class="white nopadding more">
+        <a id="more">&#x25BC; More &#x25BC;</a>
+      </div>
+      
+      <div class="white" id="home">
+        <a id="test"></a>
+        <h2>Bienvenidos a todos!</h2>
+          <p><a th:href="@{/about-us}"><u>Ciphering Ninja</u></a>  Our team works on Cyber security -- We encrypt your data by using cipher-cryptography, We've written a method to cipher your data and you have to login and you even have the option to save your encrypted data.</p>
+          <p> <u>So What's Cyber security?</u> Cyber security is the practice of defending computers, servers, mobile devices, electronic systems, networks, and data from malicious attacks.It's moreover known as information technology security or electronic information security.</p>
+          <p> <u>So What's Cryptography?</u> Cryptography is the study of secure communications techniques that allows only the sender and intended recipient of a message to view its contents. The term is derived from the Greek word kryptos, which means hidden. It is closely associated to encryption, which is the act of scrambling ordinary text into what's known as ciphertext and then back again upon arrival</p>
+     </div>
+      
+      <div class="semitrans">
+        <h2>The Issue: Ciphering Ninja solves.</h2>
+        <p>In the world of digital fraud, to prevent our data, many techniques are used to keep our data safe from hackers (or any third party), One of them is Cryptography. We use Cryptography to cipher our data (focusing more on passwords) from any unauthorised third party. Nowadays as hacking is exceedingly common and remain a very big threat to our data. Encryption ensures information is kept confidential. As a result, we implement cryptography</p>
+        <h2>How do we work?</h2>
+        <p>The plaintext (which is the input message given by the user) will be encrypted to Ciphertext (which is the encrypted message) and the user may even store it in his account for future use and can even Decrypt it later.</p>
+        
+      </div>
+      
+      <div class="dark">
+        <p>This webite was made by <a th:href="@{/about-us}" >Team Runtime Terror</a>. Contact us at <a th:href="@{/contact-us}">this page</a>!</p>
+      </div>
+</html>

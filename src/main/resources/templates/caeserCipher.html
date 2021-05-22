@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+<title th:utext="#{label.pages.home.title}">home</title>
+</head>
+
+<body>
+	<header th:replace="core/signedheader :: header"></header>
+
+	<div class="container">
+	    <div class="row">
+            <label size="100px">   MY STORE </label>  <a href="/caesar-cipher/add" class="btn btn-primary">Add New</a>
+
+        </div>
+		<table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Shift</td>
+            <td>Text</td>
+            <td>Created</td>
+            <td>Operation</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:if="${caeserCiphers.empty}">
+            <td colspan="6">No data found</td>
+          </tr>
+          <tr th:each="caeser : ${caeserCiphers}">
+            <td th:text="${caeser.id}">1</td>
+            <td><a href="view.html" th:href="@{'/' + ${caeser.id}}" th:text="${caeser.title}">Title ...</a></td>
+            <td th:text="${caeser.shift}">3</td>
+            <td th:text="${caeser.caesertext}">Text ...</td>
+            <td th:text="${#calendars.format(caeser.created)}">July 11, 2012 2:17:16 PM CDT</td>
+          	<td><a href="/" th:href="@{'/caesar-cipher/update/' + ${caeser.id}}" class="btn btn-info" role="button" >Update</a>
+                <a href="/" th:href="@{'/caesar-cipher/delete/' + ${caeser.id}}" class="btn btn-danger" role="button" >Delete</a>
+                <a href="/" th:href="@{'/caesar-cipher/decrypt/' + ${caeser.id}}" class="btn btn-warning" role="button" >Decrypt</a>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+	</div>
+</body>
+
+</html>

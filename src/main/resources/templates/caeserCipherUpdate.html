@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+<style>
+.password-verdict{
+color:#000;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script th:src="@{/resources/pwstrength.js}"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII"/>
+<title th:utext="#{label.form.title}">form</title>
+</head>
+<body>
+<header th:replace="core/signedheader :: header"></header>
+    <div class="container">
+        <div >
+            <h1> Encrypt Text</h1>  
+            <br/>
+            <form action="/" method="POST" enctype="utf8" >
+                <div class="form-group row" >
+                    <label for="title" class="col-sm-3" >Title</label>
+                    <span class="col-sm-5"><input id="title" class="form-control" name="title" th:field="*{caeserCipher.title}" required="required"/></span>
+                    <span id="titleError" class="alert alert-danger col-sm-4" style="display:none"></span>
+                    
+                </div>
+                <div class="form-group row">
+                    <label for="text" class="col-sm-3" >Text</label>
+                    <span class="col-sm-5"><textarea name="text" class="form-control" id="text" rows="3" th:field="*{caeserCipher.text}" required="required"></textarea></span>
+                    <span id="textError" class="alert alert-danger col-sm-4" style="display:none"></span>
+                    
+                </div>
+                <div class="form-group row">
+                    <label for="shift" class="col-sm-3">Shift By</label>
+                    <span class="col-sm-5">
+<select name="shift" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" th:field="*{caeserCipher.shift}">
+    <option th:each="i : ${#numbers.sequence(2, 4)}" th:value="${i}" th:text="${i}" 
+      th:selected="${i==caeserCipher.shift}"></option>
+</select>
+</span>
+                    <span id="emailError" class="alert alert-danger col-sm-4" style="display:none"></span>
+                    
+                </div>
+                <br/>
+                <input type="hidden" th:field="*{caeserCipher.id}">
+                <button type="submit" class="btn btn-primary" th:utext="#{label.form.submit}">submit</button>
+            </form>
+            <br/> 
+        </div>
+    </div>
+
+<script th:inline="javascript">
+var serverContext = [[@{/}]];
+
+$(document).ready(function () {
+	$('form').submit(function(event) {
+		shift(event);
+	});
+	
+});
+
+function shift(event){
+	event.preventDefault();
+    $(".alert").html("").hide();
+    $(".error-list").html("");
+
+    var formData= $('form').serialize();
+    $.post(serverContext + "caesar-cipher/update",formData ,function(data){
+        if(data.message == "success"){
+            window.location.href = serverContext + "caesar-cipher";
+        }
+        
+    })
+    .fail(function(data) {
+		alert (data);
+    });
+}
+
+</script>
+</body>
+
+</html>
